@@ -1,0 +1,4 @@
+baseURL = 'https://mikesmithgh.github.io/'
+languageCode = 'en-us'
+title = 'Mike Smith'
+theme = 'ananke'
