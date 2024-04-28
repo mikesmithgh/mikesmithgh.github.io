@@ -1,10 +1,45 @@
-title = "My awesome website"
-
 [params.author]
-name = "Mike Smith"
-image = "img/author.jpg"
-headline = "A generally awesome human"
-bio = "A little bit about me"
-links = [
-  { twitter = "https://twitter.com/username" }
-]
+  name = "Mike Smith"
+  headline = "A generally awesome human"
+  image = "img/mike.png"
+  bio = "A little bit about you"
+  links = [
+  #   { email = "mailto:hello@your_domain.com" },
+  #   { link = "https://link-to-some-website.com/" },
+  #   { amazon = "https://www.amazon.com/hz/wishlist/ls/wishlist-id" },
+  #   { apple = "https://www.apple.com" },
+  #   { blogger = "https://username.blogspot.com/" },
+  #   { codepen = "https://codepen.io/username" },
+  #   { dev = "https://dev.to/username" },
+  #   { discord = "https://discord.gg/invitecode" },
+  #   { dribbble = "https://dribbble.com/username" },
+  #   { facebook = "https://facebook.com/username" },
+  #   { flickr = "https://www.flickr.com/photos/username/" },
+  #   { foursquare = "https://foursquare.com/username" },
+    { github = "https://github.com/mikesmithgh" },
+  #   { gitlab = "https://gitlab.com/username" },
+  #   { google = "https://www.google.com/" },
+  #   { instagram = "https://instagram.com/username" },
+  #   { keybase = "https://keybase.io/username" },
+  #   { kickstarter = "https://www.kickstarter.com/profile/username" },
+  #   { lastfm = "https://lastfm.com/user/username" },
+    { linkedin = "https://linkedin.com/in/mikesmithli" },
+  #   { mastodon = "https://mastodon.instance/@username" },
+  #   { medium = "https://medium.com/username" },
+  #   { microsoft = "https://www.microsoft.com/" },
+  #   { patreon = "https://www.patreon.com/username" },
+  #   { pinterest = "https://pinterest.com/username" },
+  #   { reddit = "https://reddit.com/user/username" },
+  #   { slack = "https://workspace.url/team/userid" },
+  #   { snapchat = "https://snapchat.com/add/username" },
+  #   { soundcloud = "https://soundcloud.com/username" },
+  #   { stackoverflow = "https://stackoverflow.com/users/6digit/username" },
+  #   { steam = "https://steamcommunity.com/profiles/userid" },
+  #   { telegram = "https://t.me/username" },
+  #   { tiktok = "https://tiktok.com/@username" },
+  #   { tumblr = "https://username.tumblr.com" },
+  #   { twitch = "https://twitch.tv/username" },
+  #   { twitter = "https://twitter.com/username" },
+  #   { whatsapp = "https://wa.me/phone-number" },
+  #   { youtube = "https://youtube.com/username" },
+  ]

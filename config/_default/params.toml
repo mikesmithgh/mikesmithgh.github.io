@@ -6,36 +6,62 @@
 # https://jpanther.github.io/congo/docs/configuration/#theme-parameters
 
 colorScheme = "congo"
+defaultAppearance = "dark"
+autoSwitchAppearance = true
+enableSearch = true
+enableCodeCopy = true
+enableImageLazyLoading = true
+enableImageWebp = true
+enableQuicklink = true
+dateFormat = "Jan 2 2006"
+description = "My awesome website in metadata"
+# mainSections = ["posts"]
 # darkMode = "auto"
 # darkToggle = false
 # logo = "img/logo.jpg"
-# description = "My awesome website"
-# mainSections = ["section1", "section2"]
 # robots = ""
 
+[header]
+  layout = "basic"
+  # logo =
+  # logoDark =
+  showTitle = true
+
+[footer]
+  showCopyright = true
+  showThemeAttribution = false
+  showAppearanceSwitcher = true
+  showScrollToTop = false
+
 [homepage]
-  layout = "page" # valid options: page, profile, custom
-  showRecent = false
+  layout = "profile" # valid options: page, profile, custom
+  showRecent = true
+  recentLimit = 10
 
 [article]
   showDate = true
-  dateFormat = "2 January 2006"
+  showDateUpdated = false
   showAuthor = true
   showBreadcrumbs = false
   showDraftLabel = true
   showEdit = false
-  # editURL = "https://github.com/username/repo/"
+  # editURL = ""
   editAppendPath = true
   showHeadingAnchors = true
   showPagination = true
   showReadingTime = true
   showWordCount = false
+  showTableOfContents = false
+  showTaxonomies = false
+  showComments = false
   # sharingLinks = ["facebook", "twitter", "pinterest", "reddit", "linkedin", "email"]
 
 [list]
   showBreadcrumbs = false
   showSummary = false
   groupByYear = true
+  showTableOfContents = false
+  paginationWidth = 1
 
 [taxonomy]
   showTermCount = true
@@ -52,3 +78,4 @@ colorScheme = "congo"
   # bing = ""
   # pinterest = ""
   # yandex = ""
+

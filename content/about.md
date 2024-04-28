@@ -1,3 +1,3 @@
 # about
 
-all abort me
+all about me
