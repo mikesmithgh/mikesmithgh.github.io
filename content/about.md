@@ -1,3 +1,8 @@
-# about
++++
+showDate = false
+showReadingTime = false
+draft = true
++++
+# About
 
-all about me
+I am a software engineer primarily focused on backend and platform development.

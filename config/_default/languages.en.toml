@@ -1,8 +1,8 @@
 [params.author]
   name = "Mike Smith"
-  headline = "A generally awesome human"
+  headline = "Software Engineer, Neovim Enthusiast"
   image = "img/mike.png"
-  bio = "A little bit about you"
+  bio = "Software Engineer, Neovim Enthusiast"
   links = [
   #   { email = "mailto:hello@your_domain.com" },
   #   { link = "https://link-to-some-website.com/" },
@@ -29,7 +29,7 @@
   #   { microsoft = "https://www.microsoft.com/" },
   #   { patreon = "https://www.patreon.com/username" },
   #   { pinterest = "https://pinterest.com/username" },
-  #   { reddit = "https://reddit.com/user/username" },
+    { reddit = "https://reddit.com/user/nvimmike" },
   #   { slack = "https://workspace.url/team/userid" },
   #   { snapchat = "https://snapchat.com/add/username" },
   #   { soundcloud = "https://soundcloud.com/username" },
@@ -41,5 +41,5 @@
   #   { twitch = "https://twitch.tv/username" },
   #   { twitter = "https://twitter.com/username" },
   #   { whatsapp = "https://wa.me/phone-number" },
-  #   { youtube = "https://youtube.com/username" },
+    { youtube = "https://youtube.com/@nvimmike" },
   ]

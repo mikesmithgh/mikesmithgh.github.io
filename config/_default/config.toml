@@ -13,3 +13,5 @@ enableRobotsTXT = true
 
 summaryLength = 0
 
+outputs.home = ["HTML", "RSS", "JSON"]
+  

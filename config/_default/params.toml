@@ -5,7 +5,7 @@
 # Refer to the theme docs for more details about each of these parameters.
 # https://jpanther.github.io/congo/docs/configuration/#theme-parameters
 
-colorScheme = "congo"
+colorScheme = "cherry"
 defaultAppearance = "dark"
 autoSwitchAppearance = true
 enableSearch = true
@@ -14,7 +14,7 @@ enableImageLazyLoading = true
 enableImageWebp = true
 enableQuicklink = true
 dateFormat = "Jan 2 2006"
-description = "My awesome website in metadata"
+description = "Mike Smith's Blog"
 # mainSections = ["posts"]
 # darkMode = "auto"
 # darkToggle = false
@@ -52,16 +52,17 @@ description = "My awesome website in metadata"
   showReadingTime = true
   showWordCount = false
   showTableOfContents = false
-  showTaxonomies = false
+  showTaxonomies = true
   showComments = false
   # sharingLinks = ["facebook", "twitter", "pinterest", "reddit", "linkedin", "email"]
 
 [list]
   showBreadcrumbs = false
-  showSummary = false
+  showSummary = true
   groupByYear = true
   showTableOfContents = false
   paginationWidth = 1
+  showTaxonomies = true
 
 [taxonomy]
   showTermCount = true

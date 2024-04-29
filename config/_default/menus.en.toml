@@ -1,7 +1,7 @@
-[[main]]
-  name = "Blog"
-  pageRef = "posts"
-  weight = 10
+# [[main]]
+#   name = "About"
+#   pageRef = "about"
+#   weight = 9
 
 [[main]]
   name = "Blog"
@@ -9,18 +9,18 @@
   weight = 10
 
 [[main]]
-  name = "Topics"
+  name = "Tags"
   pageRef = "tags"
   weight = 20
 
-# [[main]]
-#   name = "GitHub"
-#   url = "https://github.com/mikesmithgh"
-#   weight = 30
-#   [main.params]
-#     icon = "github"
-#     showName = false
-#     target = "_blank"
+[[main]]
+  name = "GitHub"
+  url = "https://github.com/mikesmithgh"
+  weight = 30
+  [main.params]
+    icon = "github"
+    showName = false
+    target = "_blank"
 
 [[main]]
   identifier = "search"
@@ -28,12 +28,3 @@
   [main.params]
     action = "search"
     icon = "search"
-
-[[footer]]
-  name = "Blog Menu"
-  pageRef = "posts"
-
-[[footer]]
-  name = "Blog Menu 2"
-  pageRef = "posts"
-
