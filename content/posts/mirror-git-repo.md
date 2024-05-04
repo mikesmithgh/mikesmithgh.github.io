@@ -9,10 +9,33 @@ tags = ['git', 'github', 'gitlab', 'codeberg']
 Tutorial on how to mirror your Github repositories to Gitlab and Codeberg.
 {{< /lead >}}
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ultrices gravida dictum fusce ut placerat orci. Cursus mattis molestie a iaculis at erat pellentesque adipiscing. Tellus orci ac auctor augue mauris augue neque. Consectetur libero id faucibus nisl tincidunt eget nullam non. Imperdiet nulla malesuada pellentesque elit eget gravida cum. Accumsan tortor posuere ac ut consequat semper viverra nam libero. Arcu cursus vitae congue mauris. Ut faucibus pulvinar elementum integer enim. Dolor sit amet consectetur adipiscing elit pellentesque. Tincidunt praesent semper feugiat nibh sed pulvinar proin gravida. Ut sem viverra aliquet eget. Potenti nullam ac tortor vitae purus. Ac placerat vestibulum lectus mauris ultrices eros in cursus turpis.
+## Motivation
 
-Felis imperdiet proin fermentum leo vel orci porta non pulvinar. Malesuada fames ac turpis egestas integer. Tincidunt ornare massa eget egestas purus viverra accumsan in nisl. Fringilla urna porttitor rhoncus dolor purus non enim. Massa placerat duis ultricies lacus sed turpis tincidunt id. Pulvinar pellentesque habitant morbi tristique senectus et netus et. Commodo elit at imperdiet dui. Mauris in aliquam sem fringilla ut morbi tincidunt. Ac odio tempor orci dapibus ultrices in iaculis nunc. Neque sodales ut etiam sit. Consectetur a erat nam at lectus urna duis. Cras sed felis eget velit aliquet sagittis id. Risus viverra adipiscing at in tellus.
+I have seen an uptick in Reddit posts around Github accounts being locked out. In particular,
+the account holder of one of my favorite Neovim plugins [fzf-lua](https://github.com/ibhagwan/fzf-lua) was randomly
+suspended. See [PSA: Fzf-lua pulls cause an error, my GitHub account has been “flagged” for no apparent reason?](https://www.reddit.com/r/neovim/comments/1bqf1w3/psa_fzflua_pulls_cause_an_error_my_github_account/).
+Most of the time the accounts are reinstated, but now I realize how easily that could disruptive my workflow and
+potentially cause me to lose a lot of my work. Additionally, it is nice to have backups available in the case of Github outages.
 
+## Problem
+
+For my situation, I wanted two solve to problems:
+
+1. Create backups of my work that are easily accessible.
+2. Have my public facing projects hosted by an alternative provider.
+
+## Solution
+
+I created a bash script `mirror.sh` that does the following:
+
+- Creates a temporary directory 
+- Clones a list of repositories in the temporary directory using the [--mirror](https://git-scm.com/docs/git-clone#Documentation/git-clone.txt-code--mirrorcode) option
+- For each of the target destination repositories, push the repository using the [--mirror](https://git-scm.com/docs/git-push#Documentation/git-push.txt---mirror) option
+- Delete the temporary directory
+
+The benefit of this is that is it portable. I can run it on my local machine or schedule it to run on a remote machine.
+
+### mirror.sh
 ```bash
 #!/usr/bin/env bash
 set -e -o pipefail
@@ -56,9 +79,52 @@ done
 rm -rf "$mirror_dir"
 ```
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ultrices gravida dictum fusce ut placerat orci. Cursus mattis molestie a iaculis at erat pellentesque adipiscing. Tellus orci ac auctor augue mauris augue neque. Consectetur libero id faucibus nisl tincidunt eget nullam non. Imperdiet nulla malesuada pellentesque elit eget gravida cum. Accumsan tortor posuere ac ut consequat semper viverra nam libero. Arcu cursus vitae congue mauris. Ut faucibus pulvinar elementum integer enim. Dolor sit amet consectetur adipiscing elit pellentesque. Tincidunt praesent semper feugiat nibh sed pulvinar proin gravida. Ut sem viverra aliquet eget. Potenti nullam ac tortor vitae purus. Ac placerat vestibulum lectus mauris ultrices eros in cursus turpis.
+## Run on a schedule
 
-Felis imperdiet proin fermentum leo vel orci porta non pulvinar. Malesuada fames ac turpis egestas integer. Tincidunt ornare massa eget egestas purus viverra accumsan in nisl. Fringilla urna porttitor rhoncus dolor purus non enim. Massa placerat duis ultricies lacus sed turpis tincidunt id. Pulvinar pellentesque habitant morbi tristique senectus et netus et. Commodo elit at imperdiet dui. Mauris in aliquam sem fringilla ut morbi tincidunt. Ac odio tempor orci dapibus ultrices in iaculis nunc. Neque sodales ut etiam sit. Consectetur a erat nam at lectus urna duis. Cras sed felis eget velit aliquet sagittis id. Risus viverra adipiscing at in tellus.
+I chose to set this up on a remote virtual machine and configured a cronjob to run `mirror.sh` every eight hours.
 
-At quis risus sed vulputate odio. Faucibus a pellentesque sit amet porttitor eget dolor morbi. Facilisis volutpat est velit egestas dui id ornare arcu odio. Orci dapibus ultrices in iaculis nunc sed augue lacus viverra. Cras semper auctor neque vitae. Sed odio morbi quis commodo. Sed vulputate odio ut enim blandit volutpat maecenas volutpat blandit. Auctor elit sed vulputate mi sit amet. Bibendum arcu vitae elementum curabitur vitae. Vel fringilla est ullamcorper eget nulla facilisi etiam dignissim diam. Penatibus et magnis dis parturient. Non enim praesent elementum facilisis leo. Sit amet commodo nulla facilisi.
+For the cloud hosting provider, I went with [Oracle Cloud Infrastructure](https://www.oracle.com/cloud) because they offer [Always Free Resources](https://docs.oracle.com/en-us/iaas/Content/FreeTier/freetier_topic-Always_Free_Resources.htm).
+The VM is running `Ubuntu-22.04` on a `VM.Standard.E2.1.Micro` instance so that it falls into the always free category.
+
+### Setup
+- Create an SSH key, see [Generating a new SSH key](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent#generating-a-new-ssh-key) for instructions
+  - For example,
+  ```sh
+  ssh-keygen -t ed25519 -C "mirror"
+  ```
+- Add the `id_ed25519.pub` public key to your [GitLab](https://gitlab.com/) account, see [Add an SSH key to your GitLab account](https://docs.gitlab.com/ee/user/ssh.html#add-an-ssh-key-to-your-gitlab-account)
+- Add the `id_ed25519.pub` public key to your [Codeberg](https://codeberg.org/) account, see [Add the SSH key to Codeberg](https://docs.codeberg.org/security/ssh-key/#add-the-ssh-key-to-codeberg)
+- Install `keychain` 
+
+  > keychain is a manager for ssh-agent, typically run from ~/.bash_profile. It allows your shells and cron jobs to easily share a single ssh-agent process.
+
+  `keychain` is necessary to allow the cronjob ssh access to the git repositories without the need of reentering the ssh passphrase every time.
+
+  ```sh
+  sudo apt update && sudo apt install keychain
+  ```
+
+- Setup files containing ssh-agent environment variables to allow passwordless ssh connections
+
+  ```sh
+  keychain --noask --eval id_dsa
+  ```
+
+  This will generate files under the `~/.keychain` in the form of `$HOSTNAME-$SHELL`. In our case, we will use `$HOSTNAME-sh`.
+
+- Add the cronjob to run `mirror.sh` every 8 hours
+
+  - Run the command `crontab -e` and add the following
+
+    ```bash
+    SHELL=/bin/bash
+
+    0 */8 * * * source "$HOME"/.keychain/$(hostname)-sh; /home/ubuntu/gitrepos/dotfiles/bash/scripts/mirror.sh 2>&1 | logger -t 'CRON(mirror)'
+    ```
+
+    This will run a cronjob every 8 hours that does the following:
+    
+      - sources the `keychain` file to use ssh-agent environment variables which allows for passwordless ssh connections
+      - runs `mirror.sh` to mirror the git repositories
+      - pipes the results of `mirror.sh` into `logger` to save the output as system logs `/var/log/syslog` with a prefix of `CRON(mirror):`
 
