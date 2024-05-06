@@ -1,6 +1,7 @@
 +++
 title = 'How to mirror your git repo?'
 date = 2024-05-05T13:36:47-04:00
+publishDate = 2024-05-05T13:36:47-04:00
 draft = false
 tags = ['git', 'github', 'gitlab', 'codeberg']
 description = 'Tutorial on how to mirror your Github repositories to Gitlab and Codeberg.'
