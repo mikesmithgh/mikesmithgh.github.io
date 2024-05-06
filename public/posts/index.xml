@@ -10,7 +10,7 @@
         <name>Mike Smith</name>
     </author><guid>http://localhost:1313/mirror-git-repo/</guid>
     <description><![CDATA[<div class="featured-image">
-                <img src="/images/mirror-box-drawing.png" referrerpolicy="no-referrer">
+                <img src="/mirror-git-repo/mirror-box-drawing.png" referrerpolicy="no-referrer">
             </div>Tutorial on how to mirror your Github repositories to Gitlab and Codeberg.]]></description>
 </item></channel>
 </rss>

@@ -26,7 +26,7 @@ theme = "DoIt"
   #  date format
   dateFormat = "2006-01-02"
   # website images for Open Graph and Twitter Cards
-  images = ["/images/logo.png"]
+  images = ["/img/logo.png"]
   #  enable PWA support
   enablePWA = false
   # [Experimental] cache remote images in markdown, more info: https://github.com/HEIGE-PCloud/DoIt/pull/860#issue-1574342372
@@ -158,7 +158,7 @@ theme = "DoIt"
       # URL of avatar shown in home page
       # Place your avatar file under static or assets directory
       # The filepath is relative to the static or assets directory
-      avatarURL = "/images/mike.png"
+      avatarURL = "/img/mike.png"
       # URL the avatar links to
       avatarLinkURL = ""
       #  title shown in home page (HTML format is supported)
@@ -663,7 +663,7 @@ theme = "DoIt"
   name = "Mike Smith"
   email = ""
   link = ""
-  avatar = "/images/mike.png"
+  avatar = "/img/mike.png"
   gravatarEmail = ""
 # Sitemap config
 [sitemap]

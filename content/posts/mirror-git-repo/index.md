@@ -6,8 +6,8 @@ draft = false
 tags = ['git', 'github', 'gitlab', 'codeberg']
 description = 'Tutorial on how to mirror your Github repositories to Gitlab and Codeberg.'
 summary = 'Tutorial on how to mirror your Github repositories to Gitlab and Codeberg.'
-featuredImage = '/images/mirror-box-drawing.png'
-images = ['/images/mirror-box-drawing.png']
+featuredImage = 'mirror-box-drawing.png'
+images = ['mirror-box-drawing.png']
 +++
 
 ## Motivation
