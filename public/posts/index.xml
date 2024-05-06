@@ -1,19 +1,16 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Mike Smith</title>
-    <link>http://localhost:1313/posts/</link>
-    <description>Recent content on Mike Smith</description>
-    <generator>Hugo</generator>
-    <language>en</language>
-    <lastBuildDate>Sun, 28 Apr 2024 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>How to mirror your git repo?</title>
-      <link>http://localhost:1313/posts/mirror-git-repo/</link>
-      <pubDate>Sun, 28 Apr 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/mirror-git-repo/</guid>
-      <description>Tutorial on how to mirror your Github repositories to Gitlab and Codeberg.</description>
-    </item>
-  </channel>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>All Posts - Mike Smith</title>
+        <link>http://localhost:1313/posts/</link>
+        <description>All Posts | Mike Smith</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sun, 05 May 2024 13:36:47 -0400</lastBuildDate><atom:link href="http://localhost:1313/posts/" rel="self" type="application/rss+xml" /><item>
+    <title>How to mirror your git repo?</title>
+    <link>http://localhost:1313/mirror-git-repo/</link>
+    <pubDate>Sun, 05 May 2024 13:36:47 -0400</pubDate><author>
+        <name>Mike Smith</name>
+    </author><guid>http://localhost:1313/mirror-git-repo/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/images/mirror-box-drawing.png" referrerpolicy="no-referrer">
+            </div>Tutorial on how to mirror your Github repositories to Gitlab and Codeberg.]]></description>
+</item></channel>
 </rss>
