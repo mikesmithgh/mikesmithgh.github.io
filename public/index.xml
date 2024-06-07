@@ -3,9 +3,18 @@
         <title>Mike Smith</title>
         <link>http://localhost:1313/</link>
         <description>Mike Smith&#39;s Blog | Software Engineer, Neovim Enthusiast</description>
-        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sun, 05 May 2024 13:36:47 -0400</lastBuildDate>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Fri, 07 Jun 2024 09:06:11 -0400</lastBuildDate>
             <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
         <item>
+    <title>kitty-scrollback.nvim v5.0.0 released!</title>
+    <link>http://localhost:1313/kitty-scrollback-v5/</link>
+    <pubDate>Fri, 07 Jun 2024 09:06:11 -0400</pubDate><author>
+        <name>Mike Smith</name>
+    </author><guid>http://localhost:1313/kitty-scrollback-v5/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/kitty-scrollback-v5/kitty-scrollback-github.png" referrerpolicy="no-referrer">
+            </div>kitty-scrollback.nvim v5.0.0 drop support for Kitty version &lt; 0.32.2 + use Kitty&rsquo;s builtin bracketed paste + experimental tmux support]]></description>
+</item><item>
     <title>How to mirror your git repo?</title>
     <link>http://localhost:1313/mirror-git-repo/</link>
     <pubDate>Sun, 05 May 2024 13:36:47 -0400</pubDate><author>
